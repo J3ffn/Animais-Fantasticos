@@ -254,7 +254,11 @@ body {
 
 .js-accordion dt {
   cursor: pointer;
-  width: 300px;
+  max-width: fit-content;
+}
+
+.js-accordion dt::selection {
+  color: #e54;
 }
 
 .js-accordion dt::after {
