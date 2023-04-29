@@ -41,3 +41,31 @@ function initAccordion() {
 }
 
 initAccordion();
+
+const linksInternos = document.querySelectorAll(".js-menu a[href^='#'");
+
+function scrollSuave() {
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    // foram alternativa
+    // const distanciaTopo = section.offsetTop;
+    // window.scrollTo({
+    //   top: distanciaTopo,
+    //   behavior: "smooth",
+    // });
+  }
+
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
+
+scrollSuave();
