@@ -97,6 +97,11 @@ body {
   grid-column: 2;
 }
 
+#ajuda {
+  grid-column: 2;
+  margin-bottom: 0px;
+}
+
 .animais-lista li {
   cursor: pointer;
 }
@@ -218,8 +223,11 @@ body {
     grid-column: 1;
   }
   .grid-section {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 200px 1fr;
     grid-gap: 10px;
+  }
+  #ajuda {
+    grid-column: 1;
   }
   .animais-lista {
     grid-column: 1;
@@ -237,5 +245,40 @@ body {
   }
   .copy {
     margin-bottom: 0px;
+  }
+}
+
+.js .js-accordion dd {
+  display: none;
+}
+
+.js-accordion dt {
+  cursor: pointer;
+  width: 300px;
+}
+
+.js-accordion dt::after {
+  content: "⬎";
+  margin-left: 10px;
+}
+
+.js-accordion dt.ativo::after {
+  content: "⬏";
+  margin-left: 10px;
+}
+
+.js-accordion dd.ativo {
+  display: block;
+  animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
   }
 }
